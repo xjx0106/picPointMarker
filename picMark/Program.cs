@@ -16,7 +16,7 @@ namespace picMark
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new 打点());
+            Application.Run(new Form1());
         }
     }
 }

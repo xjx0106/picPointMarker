@@ -2,7 +2,7 @@
 
 namespace picMark
 {
-    partial class 打点
+    partial class Form1
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -328,7 +328,7 @@ namespace picMark
             this.label14.TabIndex = 26;
             this.label14.Text = "称谓：";
             // 
-            // 打点
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -359,8 +359,8 @@ namespace picMark
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "打点";
-            this.Text = "Form1";
+            this.Name = "Form1";
+            this.Text = "打点";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

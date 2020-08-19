@@ -14,7 +14,7 @@ using System.IO;
 
 namespace picMark
 {
-    public partial class 打点 : Form
+    public partial class Form1 : Form
     {
 
         public bool isPointOneFinished = false;
@@ -27,7 +27,7 @@ namespace picMark
         public string picName;
 
         //===============================================================
-        public 打点()
+        public Form1()
         {
             InitializeComponent();
         }
