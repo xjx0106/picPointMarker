@@ -64,7 +64,7 @@ namespace picMark
                     //next.Enabled = true;
                     label5.Text = label5.Text + "," + xCoordinate + "," + yCoordinate + "," + label9.Text;
                     //cutPicture(listBox1.SelectedItem.ToString(),x1,y1,(x2-x1),(y2-y1));
-                    if (x2 >= x1 && y2 >= y1)
+                    if (x2 > x1 && y2 > y1)
                     {
                         cutPicture(listBox1.SelectedItem.ToString(), x1, y1, x2 - x1, y2 - y1);
                     }
@@ -75,11 +75,6 @@ namespace picMark
                     }
                 }
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            //null
         }
 
         //点击重来按钮
