@@ -16,7 +16,6 @@ namespace picMark
 {
     public partial class Form1 : Form
     {
-
         public bool isPointOneFinished = false;
         public bool isPointTwoFinished = false;
         public string[] fileList;
@@ -272,6 +271,11 @@ namespace picMark
             listBox3.SelectedIndex = selectIndex;
             pictureBox1.Load(this.listBox1.SelectedItem.ToString());
             listBox2.Items.Clear();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
   
