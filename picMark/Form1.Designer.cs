@@ -59,6 +59,8 @@ namespace picMark
             this.label14 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pass = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -69,9 +71,11 @@ namespace picMark
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBox1.Location = new System.Drawing.Point(32, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(728, 776);
+            this.pictureBox1.Size = new System.Drawing.Size(730, 730);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // label1
@@ -255,7 +259,7 @@ namespace picMark
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(934, 532);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 32);
             this.button1.TabIndex = 21;
@@ -266,7 +270,7 @@ namespace picMark
             // exportpoint
             // 
             this.exportpoint.Location = new System.Drawing.Point(934, 572);
-            this.exportpoint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exportpoint.Margin = new System.Windows.Forms.Padding(2);
             this.exportpoint.Name = "exportpoint";
             this.exportpoint.Size = new System.Drawing.Size(52, 32);
             this.exportpoint.TabIndex = 22;
@@ -290,7 +294,7 @@ namespace picMark
             this.listBox3.Font = new System.Drawing.Font("黑体", 10F);
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(983, 62);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(198, 329);
             this.listBox3.TabIndex = 24;
@@ -334,11 +338,34 @@ namespace picMark
             this.label15.TabIndex = 28;
             this.label15.Text = "标注列表";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(875, 422);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 16);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "直接添加";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // pass
+            // 
+            this.pass.Location = new System.Drawing.Point(934, 609);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(52, 31);
+            this.pass.TabIndex = 30;
+            this.pass.Text = "跳 过";
+            this.pass.UseVisualStyleBackColor = true;
+            this.pass.Click += new System.EventHandler(this.pass_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1540, 834);
+            this.Controls.Add(this.pass);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label14);
@@ -407,6 +434,8 @@ namespace picMark
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button pass;
     }
 
 }

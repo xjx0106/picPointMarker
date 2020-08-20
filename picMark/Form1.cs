@@ -41,8 +41,8 @@ namespace picMark
         {
             if(pictureBox1.Image != null) //有图片
             {
-                int xCoordinate = e.X * 416 / 416;
-                int yCoordinate = e.Y * 416 / 416;
+                int xCoordinate = e.X * 416 / 730;
+                int yCoordinate = e.Y * 416 / 730;
                 if (!isPointOneFinished)
                 {
                     label2.Text = xCoordinate + " " + yCoordinate;
@@ -69,8 +69,14 @@ namespace picMark
                     }
                     else
                     {
-                        reload_Click(e,e);
+                        reload_Click(e, e);
                         msg("你点击的两下不是先左上角后右下角");
+                    }
+                    if (checkBox1.Checked && x2 > x1 && y2 > y1)
+                    {
+                        addpoint_Click(e, e);
+                        cutPicture(listBox1.SelectedItem.ToString(), x1, y1, x2 - x1, y2 - y1);
+
                     }
                 }
             }
@@ -159,12 +165,21 @@ namespace picMark
                     label9.Text = "20";
                     break;
             }
-            var files = Directory.GetFiles(path.SelectedPath, "*.jpg");
-            DirectoryInfo folder = new DirectoryInfo(path.SelectedPath);
-            foreach (FileInfo file in folder.GetFiles("*.jpg"))
+            try
             {
-                listBox1.Items.Add(file.FullName);
-                listBox3.Items.Add(file.Name);
+                var files = Directory.GetFiles(path.SelectedPath, "*.jpg");
+                DirectoryInfo folder = new DirectoryInfo(path.SelectedPath);
+                listBox1.Items.Clear();
+                listBox3.Items.Clear();
+                foreach (FileInfo file in folder.GetFiles("*.jpg"))
+                {
+                    listBox1.Items.Add(file.FullName);
+                    listBox3.Items.Add(file.Name);
+                }
+            }
+            catch
+            {
+                msg("你没有选中文件夹");
             }
         }
 
@@ -253,6 +268,15 @@ namespace picMark
             }
             textBox1.Text = picName + " " + points;
             Clipboard.SetDataObject(textBox1.Text);
+            textBox2.Text = textBox2.Text + "\r\n" + textBox1.Text;
+            try
+            {
+                listBox3.SelectedIndex = listBox3.SelectedIndex + 1;
+            }
+            catch
+            {
+                msg("这个文件夹标完了!");
+            }
         }
 
         //选择了文件名列表
@@ -262,6 +286,7 @@ namespace picMark
             listBox1.SelectedIndex = selectIndex;
             picName = listBox3.SelectedItem.ToString();
             label13.Text = "文件名：" + picName;
+            textBox1.Text = "";
         }
 
         //选择了文件路径列表
@@ -275,7 +300,39 @@ namespace picMark
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            if (addpoint.Enabled != false)
+            {
+                addpoint_Click(e, e);
+            }
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox1.Visible = false;
+            }
+            else
+            {
+                textBox1.Visible = true;
+            }
+        }
+
+        private void pass_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listBox3.SelectedIndex = listBox3.SelectedIndex + 1;
+            }
+            catch
+            {
+                msg("这个文件夹标完了!");
+            }
         }
     }
   
