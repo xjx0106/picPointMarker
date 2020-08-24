@@ -167,11 +167,17 @@ namespace picMark
             }
             try
             {
-                var files = Directory.GetFiles(path.SelectedPath, "*.jpg");
+                //var files = Directory.GetFiles(path.SelectedPath, "*.jpg");
                 DirectoryInfo folder = new DirectoryInfo(path.SelectedPath);
                 listBox1.Items.Clear();
                 listBox3.Items.Clear();
+
                 foreach (FileInfo file in folder.GetFiles("*.jpg"))
+                {
+                    listBox1.Items.Add(file.FullName);
+                    listBox3.Items.Add(file.Name);
+                }
+                foreach (FileInfo file in folder.GetFiles("*.png"))
                 {
                     listBox1.Items.Add(file.FullName);
                     listBox3.Items.Add(file.Name);
