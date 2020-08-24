@@ -164,6 +164,10 @@ namespace picMark
                 case "少校":
                     label9.Text = "20";
                     break;
+                default:
+                    label9.Text = "";
+                    break;
+
             }
             try
             {
