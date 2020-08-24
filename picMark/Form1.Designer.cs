@@ -207,7 +207,7 @@ namespace picMark
             this.listBox2.ItemHeight = 12;
             this.listBox2.Location = new System.Drawing.Point(799, 531);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 112);
+            this.listBox2.Size = new System.Drawing.Size(145, 112);
             this.listBox2.TabIndex = 15;
             // 
             // label10
@@ -253,18 +253,20 @@ namespace picMark
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1003, 533);
+            this.textBox1.Location = new System.Drawing.Point(983, 965);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 110);
+            this.textBox1.Size = new System.Drawing.Size(178, 54);
             this.textBox1.TabIndex = 20;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(934, 532);
+            this.button1.Font = new System.Drawing.Font("黑体", 12F);
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(972, 552);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 32);
+            this.button1.Size = new System.Drawing.Size(80, 60);
             this.button1.TabIndex = 21;
             this.button1.Text = "删除点";
             this.button1.UseVisualStyleBackColor = true;
@@ -272,10 +274,11 @@ namespace picMark
             // 
             // exportpoint
             // 
-            this.exportpoint.Location = new System.Drawing.Point(934, 572);
+            this.exportpoint.Font = new System.Drawing.Font("黑体", 12F);
+            this.exportpoint.Location = new System.Drawing.Point(1078, 552);
             this.exportpoint.Margin = new System.Windows.Forms.Padding(2);
             this.exportpoint.Name = "exportpoint";
-            this.exportpoint.Size = new System.Drawing.Size(52, 32);
+            this.exportpoint.Size = new System.Drawing.Size(80, 60);
             this.exportpoint.TabIndex = 22;
             this.exportpoint.Text = "导出点";
             this.exportpoint.UseVisualStyleBackColor = true;
@@ -328,7 +331,7 @@ namespace picMark
             this.textBox2.Location = new System.Drawing.Point(1223, 62);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 724);
+            this.textBox2.Size = new System.Drawing.Size(305, 724);
             this.textBox2.TabIndex = 27;
             // 
             // label15
@@ -354,9 +357,10 @@ namespace picMark
             // 
             // pass
             // 
-            this.pass.Location = new System.Drawing.Point(934, 609);
+            this.pass.Font = new System.Drawing.Font("黑体", 12F);
+            this.pass.Location = new System.Drawing.Point(1078, 552);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(52, 31);
+            this.pass.Size = new System.Drawing.Size(80, 60);
             this.pass.TabIndex = 30;
             this.pass.Text = "跳 过";
             this.pass.UseVisualStyleBackColor = true;
@@ -365,7 +369,7 @@ namespace picMark
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(900, 803);
+            this.label16.Location = new System.Drawing.Point(832, 983);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 12);
             this.label16.TabIndex = 31;
@@ -374,7 +378,7 @@ namespace picMark
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(968, 803);
+            this.label17.Location = new System.Drawing.Point(900, 983);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(47, 12);
             this.label17.TabIndex = 32;
@@ -384,7 +388,7 @@ namespace picMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 834);
+            this.ClientSize = new System.Drawing.Size(1562, 824);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.pass);
@@ -417,7 +421,7 @@ namespace picMark
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
-            this.Text = "打点 7";
+            this.Text = "打点 8";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

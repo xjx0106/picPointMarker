@@ -187,7 +187,8 @@ namespace picMark
         private void addpoint_Click(object sender, EventArgs e)
         {
             listBox2.Items.Add(label5.Text); //添加进去
-
+            exportpoint.Visible = true;
+            pass.Visible = false;
             this.reload_Click(e,e);
         }
 
@@ -244,6 +245,11 @@ namespace picMark
             try
             {
                 listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+                if (listBox2.Items.Count < 1)
+                {
+                    exportpoint.Visible = false;
+                    pass.Visible = true;
+                }
             }
             catch
             {
@@ -268,7 +274,8 @@ namespace picMark
                 }
             }
             textBox1.Text = picName + " " + points;
-            Clipboard.SetDataObject(textBox1.Text);
+            //Clipboard.SetDataObject(textBox1.Text);
+            reload_Click(e,e);
             textBox2.Text = textBox2.Text + "\r\n" + textBox1.Text;
             try
             {
@@ -289,7 +296,18 @@ namespace picMark
             label13.Text = "文件名：" + picName;
             textBox1.Text = "";
 
-            pictureBox1.Height = pictureBox1.Image.Height * pictureBox1.Width / pictureBox1.Image.Width;
+            exportpoint.Visible = false;
+            pass.Visible = true;
+            pictureBox1.Width = 730;
+            pictureBox1.Height = 730;
+            if (pictureBox1.Image.Width >= pictureBox1.Image.Height)
+            {
+                pictureBox1.Height = pictureBox1.Image.Height * pictureBox1.Width / pictureBox1.Image.Width;
+            }
+            else
+            {
+                pictureBox1.Width = pictureBox1.Image.Width * pictureBox1.Height / pictureBox1.Image.Height;
+            }
         }
 
         //选择了文件路径列表
