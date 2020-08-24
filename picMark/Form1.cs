@@ -41,8 +41,8 @@ namespace picMark
         {
             if(pictureBox1.Image != null) //有图片
             {
-                int xCoordinate = e.X * 416 / 730;
-                int yCoordinate = e.Y * 416 / 730;
+                int xCoordinate = e.X * pictureBox1.Image.Width / pictureBox1.Width;
+                int yCoordinate = e.Y * pictureBox1.Image.Height / pictureBox1.Height;
                 if (!isPointOneFinished)
                 {
                     label2.Text = xCoordinate + " " + yCoordinate;
@@ -187,6 +187,7 @@ namespace picMark
         private void addpoint_Click(object sender, EventArgs e)
         {
             listBox2.Items.Add(label5.Text); //添加进去
+
             this.reload_Click(e,e);
         }
 
@@ -287,6 +288,8 @@ namespace picMark
             picName = listBox3.SelectedItem.ToString();
             label13.Text = "文件名：" + picName;
             textBox1.Text = "";
+
+            pictureBox1.Height = pictureBox1.Image.Height * pictureBox1.Width / pictureBox1.Image.Width;
         }
 
         //选择了文件路径列表
@@ -315,7 +318,7 @@ namespace picMark
         {
             if (checkBox1.Checked)
             {
-                textBox1.Visible = false;
+                //textBox1.Visible = false;
             }
             else
             {
@@ -333,6 +336,11 @@ namespace picMark
             {
                 msg("这个文件夹标完了!");
             }
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            //label17.Text = e.X + " " + e.Y;
         }
     }
   

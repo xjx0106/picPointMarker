@@ -79,6 +79,7 @@ namespace picMark
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // label1
             // 
@@ -194,7 +195,7 @@ namespace picMark
             // 
             this.listBox1.Font = new System.Drawing.Font("黑体", 10F);
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(1506, 49);
+            this.listBox1.Location = new System.Drawing.Point(1582, 103);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(682, 329);
             this.listBox1.TabIndex = 14;
@@ -327,7 +328,7 @@ namespace picMark
             this.textBox2.Location = new System.Drawing.Point(1223, 62);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 484);
+            this.textBox2.Size = new System.Drawing.Size(277, 724);
             this.textBox2.TabIndex = 27;
             // 
             // label15
@@ -416,7 +417,7 @@ namespace picMark
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
-            this.Text = "打点";
+            this.Text = "打点 7";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
