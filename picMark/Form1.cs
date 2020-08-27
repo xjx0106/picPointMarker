@@ -31,9 +31,10 @@ namespace picMark
             InitializeComponent();
         }
 
+        //窗口初始化
         private void Form1_Load(object sender, EventArgs e)
         {
-            freshBtnAddPoint();
+            freshBtnAddPoint();//刷新“添加点”按钮的状态：禁用
         }
 
         //鼠标指针点击图片的事件
@@ -41,9 +42,16 @@ namespace picMark
         {
             if(pictureBox1.Image != null) //有图片
             {
+                /*
+                 * 原为
+                 * int xCoordinate = e.X * 416 / 730;
+                 * e.X是鼠标触发事件e的所属位置相对于pictureBox1的位置（从0~730）
+                 * 其中416为所加载图片的宽高，730为窗体中pictureBox1的宽高。此计算为按比例缩放。
+                 * 改成现在这样适配所有尺寸图片。
+                 */
                 int xCoordinate = e.X * pictureBox1.Image.Width / pictureBox1.Width;
                 int yCoordinate = e.Y * pictureBox1.Image.Height / pictureBox1.Height;
-                if (!isPointOneFinished)
+                if (!isPointOneFinished) //第一个点还没有点的情况
                 {
                     label2.Text = xCoordinate + " " + yCoordinate;
                     x1 = xCoordinate;
@@ -52,7 +60,7 @@ namespace picMark
                     label5.Text = xCoordinate + "," + yCoordinate;
                     freshBtnAddPoint();
                 }
-                else if (isPointOneFinished)
+                else if (isPointOneFinished) //第一个点点了的情况
                 {
                     label4.Text = xCoordinate + " " + yCoordinate;
                     x2 = xCoordinate;
@@ -63,20 +71,18 @@ namespace picMark
                     //next.Enabled = true;
                     label5.Text = label5.Text + "," + xCoordinate + "," + yCoordinate + "," + label9.Text;
                     //cutPicture(listBox1.SelectedItem.ToString(),x1,y1,(x2-x1),(y2-y1));
-                    if (x2 > x1 && y2 > y1)
+                    if (x2 > x1 && y2 > y1) //两点合法
                     {
+                        if (checkBox1.Checked) //书否直接添加到点列表
+                        {
+                            addpoint_Click(e, e);
+                        }
                         cutPicture(listBox1.SelectedItem.ToString(), x1, y1, x2 - x1, y2 - y1);
                     }
-                    else
+                    else //两点不合法
                     {
                         reload_Click(e, e);
                         msg("你点击的两下不是先左上角后右下角");
-                    }
-                    if (checkBox1.Checked && x2 > x1 && y2 > y1)
-                    {
-                        addpoint_Click(e, e);
-                        cutPicture(listBox1.SelectedItem.ToString(), x1, y1, x2 - x1, y2 - y1);
-
                     }
                 }
             }

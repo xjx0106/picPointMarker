@@ -426,7 +426,7 @@ namespace picMark
             this.MaximumSize = new System.Drawing.Size(1578, 863);
             this.MinimumSize = new System.Drawing.Size(1578, 863);
             this.Name = "Form1";
-            this.Text = "打点 8";
+            this.Text = "打点 v9.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
